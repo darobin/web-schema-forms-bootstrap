@@ -1,0 +1,3 @@
+{% block schema_form_class %}{% parent %}{% if hints.bootstrap_type === "inline" %} form-inline{% else if hints.bootstrap_type === "horizontal" %} form-horizontal{% endif %}{% endblock %}
+{% block schema_form_header %}{% if !hints.bootstrap_type || hints.bootstrap_type === "basic" %}<fieldset>{% endif %}{% endblock %}
+{% block schema_form_footer %}{% if !hints.bootstrap_type || hints.bootstrap_type === "basic" %}</fieldset>{% endif %}{% endblock %}

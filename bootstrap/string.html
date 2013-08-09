@@ -1,0 +1,12 @@
+{% block string_header %}{% if hints.bootstrap_type !== "inline" %}<div class="form-group">{% endif %}{% endblock %}
+{% block string_footer %}{% if hints.bootstrap_type !== "inline" %}</div>{% endif %}{% endblock %}
+{% block string_control_class %}{% parent %} form-control{% endblock %}
+{% block string_control %}
+  {% if hints.bootstrap_type === "horizontal" %}
+    <div class="col-lg-10">
+      {% parent %}
+    </div>
+  {% else %}
+    {% parent %}
+  {% endif %}
+{% endblock %}
