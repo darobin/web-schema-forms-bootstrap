@@ -1,4 +1,5 @@
-web-schema-forms-bootstrap
-==========================
 
-Bootstrap support for Web Schema Forms
+# Bootstrap plugin for Web Schema Forms
+
+This plugin enhanced Web Schema Forms with the classes required for Bootstrap.
+
