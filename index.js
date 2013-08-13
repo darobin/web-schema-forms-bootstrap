@@ -42,6 +42,9 @@ exports.inline = function (context, cb) {
     $form.find("div[data-wsf-type]")
          .not("[data-wsf-type=actions]")
          .not("[data-wsf-type=boolean]")
+         .find("input, textarea, select")
+            .addClass("form-control")
+         .end()
          .each(function () {
              var $div = $(this)
              ,   $ctrl = $div.find("input, textarea, select").first()
@@ -71,13 +74,19 @@ exports.horizontal = function (context, cb) {
     $form.find("div[data-wsf-type]")
          .not("[data-wsf-type=actions]")
          .not("[data-wsf-type=boolean]")
+         .addClass("form-group")
+         .find("input, textarea, select")
+            .addClass("form-control")
+         .end()
          .each(function () {
              var $div = $(this);
              $div.find("label").addClass("col-lg-2 control-label");
              $div.find("input, select, textarea").wrapAll("<div class='col-lg-10'></div>");
          })
          ;
-    $form.find("div[data-wsf-type=actions] button").wrapAll("<div class='col-lg-offset-2 col-lg-10'></div>");
+    $form.find(".checkbox").wrapAll("<div class='form-group'></div>").wrapAll("<div class='col-offset-2 col-lg-10'></div>");
+    $form.find("div[data-wsf-type=actions] button").wrapAll("<div class='col-offset-2 col-lg-10'></div>");
+    $form.find("div[data-wsf-type=actions]").addClass("form-group");
     btn($form);
     cb(null, context);
 };
